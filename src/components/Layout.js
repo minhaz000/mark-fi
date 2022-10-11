@@ -5,6 +5,7 @@ import Footer  from './Footer/Footer';
 import MainContent  from './MainContent/MainContent';
 import Quiz from './MainContent/Quiz/Quiz';
 import Blog from './MainContent/Blog/Blog';
+import Error from './404';
 function Layout(props) {
 
     const router = createBrowserRouter([
@@ -12,20 +13,25 @@ function Layout(props) {
           path: "/",
           element: <><Header/> <Outlet/> <Footer/></> ,
           children : [ 
-            {
-                path: "/",
-                element:  <MainContent> </MainContent> ,
-            },{
-                path: "/quiz",
-                element:  <Quiz> </Quiz> ,
-            }, 
-            {
-                path: "/blog",
-                element:  <Blog> </Blog> ,
-            },
-
-          ]
+                    {
+                        path: "/",
+                        element:  <MainContent> </MainContent> ,
+                        loader :  ""
+                    },
+                    {
+                        path: "/quiz",
+                        element:  <Quiz> </Quiz> ,
+                    }, 
+                    {
+                        path: "/blog",
+                        element:  <Blog> </Blog> ,
+                    }]
+                    
         },
+        {
+            path:"*",
+            element: <Error> </Error>
+        }
         
          
       ]);

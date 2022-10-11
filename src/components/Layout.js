@@ -10,13 +10,14 @@ function Layout(props) {
 
     const router = createBrowserRouter([
         {
-          path: "/",
+          path: "",
           element: <><Header/> <Outlet/> <Footer/></> ,
+          errorElement : <Error></Error>,
           children : [ 
                     {
-                        path: "/",
+                        path:'/',
                         element:  <MainContent> </MainContent> ,
-                        loader :  ""
+                        loader :async ()=> fetch('https://openapi.programming-hero.com/api/quiz')
                     },
                     {
                         path: "/quiz",
@@ -28,10 +29,7 @@ function Layout(props) {
                     }]
                     
         },
-        {
-            path:"*",
-            element: <Error> </Error>
-        }
+        
         
          
       ]);

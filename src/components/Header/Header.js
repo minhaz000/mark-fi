@@ -1,5 +1,5 @@
 import React from 'react';
-import { rootContext  } from '../../Context';
+import { Link } from 'react-router-dom';
 function Header(props) {
   
   return (
@@ -7,9 +7,9 @@ function Header(props) {
        {/* Hello world */}
   <nav className="navbar navbar-expand-lg bg-light">
     <div className="container py-2">
-      <a className="navbar-brand" href="#">
+      <Link className="navbar-brand fw-bolder" to="/">
       MarkFi
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -24,14 +24,20 @@ function Header(props) {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto ">
           <li className="nav-item">
-            <a className="nav-link " aria-current="page" href="#">
+            <Link className="nav-link " aria-current="page" to="/">
               Home
-            </a>
+            </Link>
+           
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Features
-            </a>
+            <Link className="nav-link" to="/quiz">
+              Quiz
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/blog">
+              Blog
+            </Link>
           </li>
          
         </ul>

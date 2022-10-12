@@ -30,7 +30,7 @@ function Header(props) {
            
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/quiz">
+            <Link className="nav-link" to="/quiz/1">
               Quiz
             </Link>
           </li>

@@ -20,8 +20,9 @@ function Layout(props) {
                         loader :async ()=> fetch('https://openapi.programming-hero.com/api/quiz')
                     },
                     {
-                        path: "/quiz",
+                        path: "/quiz/:id",
                         element:  <Quiz> </Quiz> ,
+                        loader : async ({params})=> fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
                     }, 
                     {
                         path: "/blog",

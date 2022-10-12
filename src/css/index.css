@@ -13,3 +13,9 @@
  .topic{
   background: #090606c9;;
  }
+ .options{
+  list-style: none;
+ }
+ .cursor-pointer{
+  cursor: pointer;
+ }

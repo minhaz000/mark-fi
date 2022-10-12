@@ -1,8 +1,10 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import {Link} from 'react-router-dom'
+import {rootContext} from '../../../Context'
 function HomeTopics(props) {
     const quizzes = props.quizzes.data
-    console.log( quizzes)
+    const {topics,setTopics} = useContext(rootContext)
+    // console.log(topics)
     return (
         <div className=' row my-5 px-2'>
             <h2 className=' text-center mb-5 text-capitalize'> select your language</h2>
@@ -13,7 +15,7 @@ function HomeTopics(props) {
         <div className="card-body">
             <h5 className="card-title">{item.name}</h5>
             <p className="card-text">Total:{item.total}</p>
-            <button href="#" className="btn btn-primary w-100 px-5">Start Practicing</button>
+            <Link className="btn btn-primary w-100 px-5"  to={`quiz/${item.id}`} onClick={()=>{window.scroll(0, 0)}}>Start Practicing</Link>
         </div>
     </div>
  </div>

@@ -6,6 +6,13 @@
    background-position: center;
    
  }
+ .herotext{
+  color: aliceblue;
+  text-align: center;
+  padding-top: 15%;
+  font-size: 30px;
+  text-transform: capitalize;
+ }
  .error{
   height: 50vh;
   margin-top: 40vh;
@@ -18,4 +25,7 @@
  }
  .cursor-pointer{
   cursor: pointer;
+ }
+ .correct-ans{
+  border: 1px solid lightgreen;
  }

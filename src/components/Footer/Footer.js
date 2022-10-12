@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(props) {
     return (
         <div>
-             <div className=' text-center py-3 bg-dark text-white fw-bolder'> all the rigt  </div>
+             <div className=' text-center py-3 bg-dark text-white text-capitalize fw-bolder'> all the right reserved @ minhaz  </div>
         </div>
     );
 }

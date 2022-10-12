@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Quiz(props) {
-    window.scroll(0,50)
-    const [result,setResult] = useState()
+  
+    const [result,setResult] = useState(0)
     const quiz = useLoaderData();
+    const notify = () => toast.info(`Correct ans is  ${result}  out of ${quiz.data.questions.length} `, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });;
     const submit = ()=>{  
-        
+        window.scroll(0,50)
         const seletedOption = document.querySelectorAll('.seletedOption');
         const Question = document.querySelectorAll('.question');
         const correct_ans = document.querySelectorAll('.correct-ans');
-        const user_ans_dispaly = document.querySelectorAll('.user-ans');
+        
         const submitedAns = [];
        
 // get the inputed option of the quiz        
@@ -47,7 +58,7 @@ correct_ans.forEach((e)=>{
 } )
 
 setResult(count) ; count=0
-
+notify()
 
 
 
@@ -83,10 +94,10 @@ setResult(count) ; count=0
     
     
 </div> ) }</>:"" }  
-<div className=' ms-auto flex justify-content-end '> 
-<button className='btn btn-info px-5 py-2 text-white fw-bold my-5  ms-5 ' onClick={submit} >  Submit  </button> 
-    
-    </div>  
+    <div className=' ms-auto flex justify-content-end '> 
+            <button className='btn btn-info px-5 py-2 text-white fw-bold my-5  ms-5 ' onClick={submit} >  Submit  </button> 
+    </div> 
+    <ToastContainer /> 
 </div>
     );
 }

@@ -5,7 +5,7 @@ function Hero(props) {
         <div>
             <div className=' hero'> 
             
-            <p className=' herotext'>  wecome to  the site let's test our skis </p>
+            <p className=' herotext'>  welcome to our site for test yourself </p>
              </div>
              
         </div>

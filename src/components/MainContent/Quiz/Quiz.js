@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 function Quiz(props) {
-    
+    window.scroll(0,50)
     const [result,setResult] = useState()
     const quiz = useLoaderData();
     const submit = ()=>{  
@@ -82,8 +82,11 @@ setResult(count) ; count=0
         </div>
     
     
-</div> ) }</>:"" }    
-       <button onClick={submit} >  Submit  </button> { result}
+</div> ) }</>:"" }  
+<div className=' ms-auto flex justify-content-end '> 
+<button className='btn btn-info px-5 py-2 text-white fw-bold my-5  ms-5 ' onClick={submit} >  Submit  </button> 
+    
+    </div>  
 </div>
     );
 }

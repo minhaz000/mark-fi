@@ -41,6 +41,8 @@ correct_ans.forEach((e)=>{
         e.parentNode.children[2].classList.remove('bg-danger')
     }
     e.classList.remove('d-none')
+    e.parentNode.children[2].classList.remove('d-none')
+
     
 } )
 
@@ -74,7 +76,7 @@ setResult(count) ; count=0
                    
                     
                 </ul>
-                <p className='user-ans py-2  ps-4  fw-bold rounded-3 text-white bg-success bg-danger '> Your Ans : <span> </span> </p>
+                <p className='user-ans py-2  ps-4  fw-bold rounded-3 text-white bg-success d-none bg-danger '> Your Ans : <span> </span> </p>
                 <p className='correct-ans py-2  ps-4 bg-success text-white fw-bold d-none rounded-3'>Correct : <span>{item.correctAnswer}</span></p>
             </div>
         </div>
